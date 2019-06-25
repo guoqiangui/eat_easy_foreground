@@ -1,0 +1,114 @@
+/*
+公用样式有：
+	小图标样式 .small-icon-style
+	轮播图样式 .banner-style
+	顶部标题样式 .header-style
+	文章列表样式 .message-list-style
+	容器样式（仅仅除了头部标题和底部主菜单）.container-style
+*/
+.vc {
+  display: flex;
+  align-items: center;
+}
+.header-style {
+  width: 100%;
+  height: 40px;
+  background-color: #e63232;
+}
+.header-style a.header-back {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.header-style a.header-back i {
+  font-size: 25px;
+  margin-right: 7px;
+}
+.header-style h1 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.container-style {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  left: 0;
+  bottom: 58px;
+  overflow: scroll;
+}
+body,
+html {
+  height: 100%;
+}
+.header {
+  width: 100%;
+  height: 40px;
+  background-color: #e63232;
+}
+.header a.header-back {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.header a.header-back i {
+  font-size: 25px;
+  margin-right: 7px;
+}
+.header h1 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.login-wrapper {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 58px;
+  overflow: scroll;
+}
+.login-wrapper .login-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-wrapper .login-inner form {
+	width: 100%;
+}
+.login-wrapper .login-inner .login-item {
+	width: 100%;
+	padding: 0 20px;
+}
+.login-wrapper .login-inner .login-item input {
+	width: 100%;
+	height: 30px;
+	text-indent: 10px;
+	margin-bottom: 20px;
+}
+.login-wrapper .login-item .btn-submit {
+	background-color: #e63232;
+	color: #fff;
+}
+.login-wrapper .reg-now {
+	color: #e63232;
+}

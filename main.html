@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/eat-easy-font.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<!-- 总体是头部和底部定高，中间自适应布局 -->
+		<header>
+			<!--轮播图-->
+		    <div class="banner">
+				<!--为了无缝轮播，必须在头和尾各加一张图片-->
+				<ul class="banner_images clearfix">
+					<li><a href="javascript:;"><img src="imgs/icons/banner-03.jpg"></a></li>
+					<li><a href="javascript:;"><img src="imgs/icons/banner-01.jpg"></a></li>
+					<li><a href="javascript:;"><img src="imgs/icons/banner-02.jpg"></a></li>
+					<li><a href="javascript:;"><img src="imgs/icons/banner-03.jpg"></a></li>
+					<li><a href="javascript:;"><img src="imgs/icons/banner-01.jpg"></a></li>
+				</ul>
+				<!--轮播图上的小圆点-->
+				<ul class="banner_index clearfix">
+					<li class="current"></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<!-- 菜单 -->
+			<nav class="menu">
+				<ul>
+					<li>
+						<a href="#">
+							<i class="icon icon-sign"></i>
+							<span>签到</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="icon icon-recommend"></i>
+							<span>每周推荐</span>
+						</a>
+					</li>
+					<li>
+						<!-- 在父框架中打开链接 -->
+						<a href="category.html" target="_parent">
+							<i class="icon icon-type"></i>
+							<span>分类</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="main">
+			<div class="message-list">
+				<!-- <a href="#" class="message-item">
+					<div class="message-item-inner">
+						<img src="./imgs/food/1545709432596.jpg" class="message-img">
+						<p class="message-desc">
+							这款连张根硕和少女时代都在网上大呼喜爱的蜂蜜黄油口味一直从去年红到现在！它的口味走红，也让不少其它品牌开始模效仿，不过，他们家的口味依然无可取代！感觉一切东西和蜂蜜、黄油混在一起，都会超好吃！北海道是日本最好的奶源地，这款Calbee（卡乐比）蜂蜜北海道黄油厚切薯片选用北海道产的黄油制成，薯片、黄油、蜂蜜混合，迷之甜咸味道真素超奇妙！
+						</p>
+						<div class="message-item-info">
+							<div class="message-user-wrapper">
+								<img src="./imgs/icons/userLogo.jpg" class="user-logo">
+								<span class="username">小明</span>
+							</div>
+							<div class="message-assignment-wrapper">
+								<div class="assignment">
+									<i class="icon icon-assignment"></i>
+									<span>93</span>
+								</div>
+								<div class="praise">
+									<i class="icon icon-praise"></i>
+									<span>6</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a> -->
+				
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="js/tools_banner.js"></script>
+<script src="database/all.js"></script>
+<script>
+	var serverName = "192.168.191.1:8080";
+	
+	// 启用轮播图
+	slideBanner(5);
+	
+	$(function () {
+		if(localStorage.getItem("choice")) {
+			// 读取用户选择
+			var choiceJson = localStorage.getItem("choice");
+			var choiceArr = JSON.parse(choiceJson);
+			// console.log(choiceArr);
+			
+			var renderStr = ``;
+			
+			choiceArr.forEach(function (ele, index) {
+				var articleArr = allArticle[ele];
+				// console.log(articleArr)
+				
+				articleArr.forEach(function (article, index) {
+					// 拼接字符串
+					renderStr += `
+						<a href="detail.html?id=${article['id']}" class="message-item">
+							<div class="message-item-inner">
+								<img src="${article['thumbnail']}" class="message-img">
+								<p class="message-desc">${article['content']}</p>
+								<div class="message-item-info">
+									<div class="message-user-wrapper">
+										<img src="./imgs/icons/userLogo.jpg" class="user-logo">
+										<span class="username">小明</span>
+									</div>
+									<div class="message-assignment-wrapper">
+										<div class="assignment">
+											<i class="icon icon-assignment"></i>
+											<span>93</span>
+										</div>
+										<div class="praise">
+											<i class="icon icon-praise"></i>
+											<span>6</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					`;
+				});
+				
+				
+			});
+			
+			
+			// 渲染
+			$(".message-list").html(renderStr);
+		} else {
+			// 每一种随机1篇
+			
+		}
+	});
+	
+	
+</script>

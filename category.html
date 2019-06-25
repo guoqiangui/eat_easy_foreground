@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/category.css">
+	</head>
+	<body>
+		<header class="header">
+			<a href="#" class="header-back">
+				<i class="fa fa-angle-left"></i>
+				返回
+			</a>
+			<h1 class="header-title">分类</h1>
+		</header>
+		<!-- 左边的分类列表 -->
+		<div class="category-list-wrapper">
+			<ul class="category-list">
+				<li class="category-item">
+					<a href="#" class="link active">饼干</a>
+				</li>
+				<li class="category-item">
+					<a href="#" class="link">薯片</a>
+				</li>
+				<li class="category-item">
+					<a href="#" class="link">巧克力</a>
+				</li>
+				<li class="category-item">
+					<a href="#" class="link">海苔</a>
+				</li>
+				<li class="category-item">
+					<a href="#" class="link">坚果</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 右边的对应分类文章显示 -->
+		<div class="goods-list-wrapper">
+			<ul class="goods-list">
+				<li class="goods-item">
+					<a href="#" class="link">
+						<div class="goods-img-wrapper">
+							<img src="./imgs/food/1545709433129.jpg" class="goods-img">
+						</div>
+						<div class="goods-info-wrapper">
+							<div class="goods-name">Fortnum&amp;Mason曲奇饼干</div>
+							<div class="goods-desc">1、——英国皇室御用推荐理由Fortnum&amp;Mason从1707年至今，一直为英国皇室提供食品，香浓纯正的牛油曲奇，更有8种口味随你挑！其中一款紫罗兰曲奇的香浓，瞬间完爆Laduree无数条街，浓郁的紫罗兰混合黄油的香气，入口香酥中带着脆脆的杏仁颗粒&amp;紫罗兰糖颗粒，甜度和口感都恰到好处！</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="database/all.js"></script>
+<script>
+	$(function () {
+		$(".header-back").on("click", function () {
+			history.go(-1);
+		});
+		
+		var DataEnum = {
+		    '坚果': 'nut',
+		    '巧克力': 'chocolate',
+		    '海苔': 'nori',
+		    '薯片': 'chips',
+		    '饼干': 'biscuits'
+		}
+		
+		// 切换分类
+		$(".category-item .link").on("click", function () {
+			// 样式切换
+			$(".category-item .link").removeClass("active");
+			$(this).addClass("active");
+			
+			// 数据切换
+			var category = DataEnum[$(this).html()];
+			
+			var articleArr = allArticle[category];
+			
+			var goodsItemStr = ``;
+			articleArr.forEach(function (article) {
+				goodsItemStr += `
+					<li class="goods-item">
+						<a href="detail.html?id=${article['id']}" class="link">
+							<div class="goods-img-wrapper">
+								<img src="${article['thumbnail']}" class="goods-img">
+							</div>
+							<div class="goods-info-wrapper">
+								<div class="goods-name">${article['title']}</div>
+								<div class="goods-desc">${article['content']}</div>
+							</div>
+						</a>
+					</li>
+				`;
+			});
+			
+			// 添加到页面中
+			$(".goods-list").html(goodsItemStr);
+		});
+		
+		
+		
+		
+	});
+</script>

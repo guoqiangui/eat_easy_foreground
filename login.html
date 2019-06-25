@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/eat-easy-font.css">
+		<link rel="stylesheet" href="css/login.css">
+	</head>
+	<body>
+		<header class="header">
+			<a href="javascript:;" class="header-back">
+				<i class="fa fa-angle-left"></i>
+				返回
+			</a>
+			<h1 class="header-title">登录</h1>
+			<div></div>
+		</header>
+		<div class="login-wrapper">
+			<div class="login-inner">
+				<form id="form">
+					<div class="login-item">
+						<input type="text" name="username" id="username" placeholder="用户名或手机号">
+					</div>
+					<div class="login-item">
+						<input type="password" name="password" id="password" placeholder="请输入密码">
+					</div>
+					<div class="login-item">
+						<input type="submit" value="登录" class="btn-submit">
+					</div>
+				</form>
+				<a href="reg.html" class="reg-now">马上注册&gt;&gt;</a>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<!-- <script src="js/lib/jquery.cookie.js"></script> -->
+<script>
+	$(function () {
+		// 点击返回返回上一页
+		$(".header a.header-back").on("click", function () {
+			window.history.back();
+		});
+		
+		// 阻止表单提交
+		$("#form").on("submit", function () {
+			return false;
+		});
+		
+		
+		if(!localStorage.getItem("username")) {
+			// 获取用户名密码
+			var username = $("#username");
+			var password = $("#password");
+			
+			// 点击登录, 发送给服务器
+			$(".login-wrapper .btn-submit").on("click", function () {
+				if(username.val() && password.val()) {
+					$.ajax({
+						url: "http://192.168.191.1:8080/eat-easy-background/public/user/login/login",
+						type: "post",
+						data: {
+							username: username.val(),
+							password: password.val()
+						},
+						success: function (data) {
+							var arr = JSON.parse(data);
+							alert(arr.msg);
+							history.go(-1);
+							
+							// 储存用户名到本地
+							localStorage.setItem("username", username);
+						},
+						error: function () {
+							alert("服务器出错");
+						}
+					});
+				} else {
+					alert("请输入用户名和密码");
+				}
+			});
+		} else {
+			// 隐藏登录界面
+			$(".login-wrapper").hide();
+		}
+		
+		
+		
+		
+	});
+</script>

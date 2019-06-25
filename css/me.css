@@ -1,0 +1,192 @@
+/*
+公用样式有：
+	小图标样式 .small-icon-style
+	轮播图样式 .banner-style
+	顶部标题样式 .header-style
+	文章列表样式 .message-list-style
+	容器样式（仅仅除了头部标题和底部主菜单）.container-style
+*/
+.vc {
+  display: flex;
+  align-items: center;
+}
+.header-style {
+  width: 100%;
+  height: 40px;
+  background-color: #e63232;
+}
+.header-style a.header-back {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.header-style a.header-back i {
+  font-size: 25px;
+  margin-right: 7px;
+}
+.header-style h1 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.message-list-style .message-list {
+  padding: 0 15px;
+  margin-top: 15px;
+}
+.message-list-style .message-list a.message-item {
+  display: block;
+  margin-bottom: 15px;
+  color: #848585;
+}
+.message-list-style .message-list a.message-item .message-item-inner {
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 4px 3px 3px 1px rgba(0, 0, 0, 0.1);
+}
+.message-list-style .message-list a.message-item .message-item-inner img.message-img {
+  width: 100%;
+  height: 124px;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-desc {
+  margin: 10px 0;
+  width: 90%;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info {
+  display: flex;
+  justify-content: space-between;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info .message-user-wrapper {
+  display: flex;
+  align-items: center;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info .message-user-wrapper img.user-logo {
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info .message-assignment-wrapper {
+  display: flex;
+  align-items: center;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info .message-assignment-wrapper .assignment {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info .message-assignment-wrapper .assignment .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info .message-assignment-wrapper .praise {
+  display: flex;
+  align-items: center;
+}
+.message-list-style .message-list a.message-item .message-item-inner .message-item-info .message-assignment-wrapper .praise .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+.container-style {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  left: 0;
+  bottom: 58px;
+  overflow: scroll;
+}
+.header {
+  width: 100%;
+  height: 40px;
+  background-color: #e63232;
+}
+.header a.header-back {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.header a.header-back i {
+  font-size: 25px;
+  margin-right: 7px;
+}
+.header h1 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.container {
+  position: fixed;
+  top: 40px;
+  right: 0;
+  left: 0;
+  bottom: 58px;
+  overflow: scroll;
+}
+.container .me-inner a {
+  color: #848585;
+}
+.container .me-inner a .me-item {
+  display: flex;
+  padding: 15px;
+  background-color: #fff;
+}
+.container .me-inner a .me-item .icon-wrapper {
+  margin-right: 15px;
+}
+.container .me-inner a .me-item .me-content-wrapper {
+  text-align: left;
+}
+.container .me-inner a .me-item .me-content-wrapper .me-content {
+  margin-bottom: 8px;
+}
+.container .me-inner a .me-item .me-content-wrapper .me-content strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+.container .me-inner a .me-item .me-content-wrapper .me-content:last-of-type {
+  margin-bottom: 0;
+}
+
+.container .menu-list .menu-list-item {
+	width: 100%;
+	padding: 10px 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.quit {
+	text-align: center;
+	margin-top: 20px;
+}
+.quit .btn-quit {
+	border: 0;
+	background-color: red;
+	padding: 20px;
+	color: #fff;
+	border-radius: 5px;
+}

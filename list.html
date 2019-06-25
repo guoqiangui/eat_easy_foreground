@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/list.css">
+	</head>
+	<body>
+		<header class="header">
+			<a href="#" class="header-back">
+				<i class="fa fa-angle-left"></i>
+				返回
+			</a>
+			<h1 class="header-title">清单</h1>
+		</header>
+		<!-- 容器 -->
+		<div class="container">
+			<div class="goods-list">
+				<h1 style="color: red; text-align: center;">空空如也</h1>
+				
+				<!-- <div class="goods-item">
+					<div class="goods-img-wrapper">
+						<img src="./imgs/food/1545709433129.jpg" class="goods-img">
+					</div>
+					<div class="goods-info-wrapper">
+						<div class="goods-name">Fortnum&amp;Mason曲奇饼干</div>
+						<div class="goods-desc">1、——英国皇室御用 推荐理由Fortnum&amp;Mason从1707年至今，一直为英国皇室提供食品，香浓纯正的牛油曲奇，更有8种口味随你挑！其中一款紫罗兰曲奇的香浓，瞬间完爆Laduree无数条街，浓郁的紫罗兰混合黄油的香气，入口香酥中带着脆脆的杏仁颗粒&amp;紫罗兰糖颗粒，甜度和口感都恰到好处！</div>
+						<div class="goods-opts">
+							<button class="btn">去购买>>></button>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="database/all.js"></script>
+<script>
+	$(function () {
+		$(".header-back").on("click", function () {
+			history.go(-1);
+		});
+		
+		// 先清除一次
+		if(localStorage.getItem("list")) {
+			localStorage.removeItem("list");
+		}
+		
+		
+		if(localStorage.getItem("list")) {
+			var listJson = localStorage.getItem("list");
+			// console.log(listJson);
+			var listArr = JSON.parse(listJson);
+			var goodsItemStr = ``;
+			
+			listArr.forEach(function (id) {
+				// 根据id查询
+				var article = getArticleById(id);
+				
+				goodsItemStr += `
+					<div class="goods-item">
+						<div class="goods-img-wrapper">
+							<img src="${article['thumbnail']}" class="goods-img">
+						</div>
+						<div class="goods-info-wrapper">
+							<div class="goods-name">${article['title']}</div>
+							<div class="goods-desc">${article['content']}</div>
+							<div class="goods-opts">
+								<button class="btn">去购买>>></button>
+							</div>
+						</div>
+					</div>
+				`;
+				
+				// 添加到页面中
+				$(".goods-list").html(goodsItemStr);
+			});
+		}
+	});
+	
+</script>

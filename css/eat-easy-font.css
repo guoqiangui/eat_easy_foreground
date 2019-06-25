@@ -1,0 +1,53 @@
+/* 首页图标 */
+.icon-sign {
+	background-image: url(../imgs/icons/sign.png);
+}
+.icon-recommend {
+	background-image: url(../imgs/icons/order.png);
+}
+.icon-type {
+	background-image: url(../imgs/icons/other.png);
+}
+
+/* 播放数量 */
+.icon-assignment {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgEAYAAAAj6qa3AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAAASAAAAEgARslrPgAAAotJREFUaN7tljFIalEYx7/jI0m4YujUoC4G6aTehECnlsDF1cJoMwu6udhQa3vUFUQcbpCBCA6K4B4iDl6LJoeCEEkIEgQvJKbfG0R5LwkvPPHG6/yWj3P4f/f8vz8H7gGgUCgUys+FyBWuBdYCawG/fyAMhIEQjZJ1sk7WDQalBxiBZSxj+e0NBBBAODioBqvBajCdntankn3AJm7i5sXFdxt8xNjXKqzC6uWl7D65QpZlWZZFVHpQuYiiKIoimTqf7Bvwv0IDUNqA0tAAlDagNDMLAM1oRvPxMSAg4NISJjCBibOzCaEb3OB+fBwuLJZx/Wv/j+/yyCN/ctLz9/w9P8OgFa1oPT39PgHswR7sDQbajDajzfC8WBWrYrXdXqgt1BZq0eiEvghFKGazw9/U09OoYghDGMrlPsvfG++N9wbPP0QeIg8RSdIUNAVNgee/TwBxiENcpZL0kl7ScxzrZJ2sU6frlXqlXunwcELvAQ94fD5HyVFylCwWO2fn7NzKCgmQAAn4fJ/li7nF3GKO42xpW9qWZpiu1JW6EsfNKgD6EFLaqNLQAJQ2oDQ0ALlCjGEMY/2+0oZn7VP+DXiGZ3guFpUecBpkn+yT/dtb2Xq5QlfD1XA1DIZ+vV/v14NBYIABRqeb2piCFKTUavCCF7y7u+SIHJEjvf5LfRjCEH59hXM4h/Pra7zCK7z6+Jh6Tgc60Gm31Ua1UW2Mx8vGsrFsbLVmFsC/MnxHbG8PVzc3XxqyEiuxbm1VkpVkJZlKzcvfnFCpnHln3pm/uxs9rMY1y2bZ7P39SDcvR7/mGwDicm25tlyrVIiHeIhnYwNMYAJTqwVJSEJyZ6fZbDabzZeX+fqiUCg/ld+5DxI7e+xLwwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0xMi0yMlQyMjo0MjoyMSswODowMJWNB6MAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMTItMjJUMjI6NDI6MjErMDg6MDDk0L8fAAAAT3RFWHRzdmc6YmFzZS11cmkAZmlsZTovLy9ob21lL2FkbWluL2ljb24tZm9udC90bXAvaWNvbl9rcGpiMHo5bXB0YS9tZXNzYWdlX2ZpbGwuc3Zn1lCg8wAAAABJRU5ErkJggg==);
+}
+/* 点赞数 */
+.icon-praise {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgEAYAAAAj6qa3AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAAASAAAAEgARslrPgAAAlhJREFUaN7tlz9I61AUh3+nGAkSXEXQJSCUbjZZFMRVR0EcCsFFsFMHKYqbKA4FV0E6FP9syeLirIVSCPQKksluWi242KGi0mqPQ97r4KMvCjZVk28L99yb3/m4uUmAkJCQIEN+3zBmxsyY2d8v27It21tbdEZndGYYYDBYkrCIRSzu7yspJaWk1tfzlKc8vbx0K0+f3wLkqByVo5ublKEMZVZX2wMEAgE4xCEO0+n6df26ft1quYNra93K4/sO0DRN07Rq1b0aHv5/9eOjqqqqqg4OWpZlWdbr61fnifjV+DRP8zT39X2s8b8MDJTNslk2R0e7lcs3AfWh+lB9KBb77DzJkAzJUJQfLoCIkpSk5MbGZ2c2j5pHzaOHhx8nYHxyfHJ8UtfjuXgunjs+xglOcDI39+EFUkghVatd0AVd0NVVt3J6HoJ6Vs/q2dnZ1lhrrDWWzVKa0pQeGXlfJ4QQQlB7PfewY+5W8H9YwQpWbm/xhCc87e2JJbEklra33cHOOTwFxE/jp/HTSqVT499GwHsYDF5YEOfiXJxbVqcyz0fAq/HvCs/wDM9MTHjV+fYW8BtSSSX1/j6wAjCPeczbdvAEaNCgMTemGlONqVIpeAJKKKF0eek4juM4tVrwBBAI5L31f68AAEAoIHgCeJd3eff52f0AcpzACUAUUUSFcL/8ms3gCaiiiurHt/7vE1BAAYUuCOAiF7lYqfS6v47o0KE3GpIiKZKSz3+5gMhB5CBysLzMO7zDOzc3ve63zZ/fX9ZYY80w7ISdsBN3d72OFRISEvKjeAO0H+0vTCFi0wAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0xMi0yMlQyMjo0MjoyMSswODowMJWNB6MAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTgtMTItMjJUMjI6NDI6MjErMDg6MDDk0L8fAAAATnRFWHRzdmc6YmFzZS11cmkAZmlsZTovLy9ob21lL2FkbWluL2ljb24tZm9udC90bXAvaWNvbl9rcGpiMHo5bXB0YS9wcmFpc2VfZmlsbC5zdmc3x7GXAAAAAElFTkSuQmCC);
+}
+
+/* 页面底部主菜单图标 */
+.icon-home {
+	background-image: url(../imgs/icons/homepage_fill.png);
+}
+.icon-home.active {
+	background-image: url(../imgs/icons/homepage_fill_a.png);
+}
+.icon-find {
+	background-image: url(../imgs/icons/browse_fill.png);
+}
+.icon-find.active {
+	background-image: url(../imgs/icons/browse_fill_a.png);
+}
+.icon-list {
+	background-image: url(../imgs/icons/label_fill.png);
+}
+.icon-list.active {
+	background-image: url(../imgs/icons/label_fill_a.png);
+}
+.icon-user {
+	background-image: url(../imgs/icons/group_fill.png);
+}
+.icon-user.active {
+	background-image: url(../imgs/icons/group_fill_a.png);
+}
+
+/* 登录页图标 */
+.icon-wechat {
+	background-image: url(../imgs/icons/wechat.png);
+}
+.icon-phone {
+	background-image: url(../imgs/icons/phone.png);
+}

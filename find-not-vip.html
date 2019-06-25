@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>发现</title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/find-not-vip.css">
+		<script src="js/lib/jquery-1.11.1.min.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<a href="#" class="header-back">
+				<i class="fa fa-angle-left"></i>
+				返回
+			</a>
+			<h1 class="header-title">发现</h1>
+			<div></div>
+		</header>
+		<div class="container">
+			<div class="tips">
+				<p class="tips-content">本页面为付费内容</p>
+				<p class="tips-content">开通会员后可查看全部</p>
+				<a href="#" class="vip">开通会员</a>
+			</div>
+		</div>
+		<!-- 主菜单 -->
+		<footer class="main-menu"></footer>
+	</body>
+</html>
+<script>
+	$(function () {
+		// 点击返回返回上一页
+		$(".header a.header-back").on("click", function () {
+			window.history.back();
+		});
+		
+		// 点击开通会员，先判断是否登录
+		$(".vip").on("click", function () {
+			if(localStorage.getItem("username")) {
+				// 已登录
+				alert("开通成功");
+				location.href = "find.html";
+			} else {
+				// 没登录跳到登录页
+				location.href = "login.html";
+			}
+		});
+	});
+</script>

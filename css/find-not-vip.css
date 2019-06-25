@@ -1,0 +1,85 @@
+.vc {
+  display: flex;
+  align-items: center;
+}
+.header-style {
+  width: 100%;
+  height: 40px;
+  background-color: #e63232;
+}
+.header-style a.header-back {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.header-style a.header-back i {
+  font-size: 25px;
+  margin-right: 7px;
+}
+.header-style h1 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.header {
+  width: 100%;
+  height: 40px;
+  background-color: #e63232;
+}
+.header a.header-back {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.header a.header-back i {
+  font-size: 25px;
+  margin-right: 7px;
+}
+.header h1 {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.container {
+  position: fixed;
+  background-color: #fff;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 58px;
+  overflow: scroll;
+}
+.container .tips {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.container .tips p.tips-content {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.container .tips a.vip {
+  background-color: #e63232;
+  color: #fff;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+}

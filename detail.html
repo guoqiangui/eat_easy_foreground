@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>详情</title>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/message.css">
+	</head>
+	<body>
+		<header class="header">
+			<a href="#" class="header-back">
+				<i class="fa fa-angle-left"></i>
+				返回
+			</a>
+			<h1 class="header-title">详情</h1>
+		</header>
+		<div class="message">
+			<div class="message-inner">
+				<!-- 文章详情 -->
+				<div class="message-detail">
+					<!-- <div class="message-image-wrapper">
+						<img src="./imgs/food/1545709432596.jpg">
+					</div>
+					<div class="message-content">
+						<h1 class="message-name">Calbee北海道黄油蜂蜜厚切薯片</h1>
+						<p class="message-desc">这款连张根硕和少女时代都在网上大呼喜爱的蜂蜜黄油口味一直从去年红到现在！它的口味走红，也让不少其它品牌开始模效仿，不过，他们家的口味依然无可取代！ 感觉一切东西和蜂蜜、黄油混在一起，都会超好吃！北海道是日本最好的奶源地，这款Calbee（卡乐比）蜂蜜北海道黄油厚切薯片选用北海道产的黄油制成，薯片、黄油、蜂蜜混合，迷之甜咸味道真素超奇妙！</p>
+					</div> -->
+				</div>
+				<!-- 评论 -->
+				<div class="comment">
+					<h2 class="comment-ti">相关评论</h2>
+					<div class="comment-item">
+						<div class="comment-user-logo-wrapper">
+							<img src="./imgs/icons/userLogo.jpg" class="comment-user-logo">
+						</div>
+						<div class="comment-content-wrapper">
+							<div class="comment-user-name">零食狂人</div>
+							<div class="comment-content">这个零食不错！</div>
+							<div class="comment-opts">
+								<span class="comment-time">2019/4/5 16:50</span>
+								<span class="comment-praise"></span>
+							</div>
+							<div class="apply">
+								<div class="apply-item">
+									<span class="apply-name">爱吃零食：</span>
+									<span class="apply-content">我觉得也是</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 推荐 -->
+				<div class="recommend">
+					<h2 class="recommend-ti">推荐商品</h2>
+					<div class="recommend-item">
+						<div class="recommend-img-wrapper">
+							<img src="./imgs/food/1545709432596.jpg" class="goods-img">
+						</div>
+						<div class="recommend-content">
+							<div class="recommend-name">Calbee北海道黄油蜂蜜厚切薯片</div>
+							<div class="recommend-price">22元包邮</div>
+							<div class="recommend-opts">
+								<button class="btn">加入清单</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<ul class="action-list">
+				<li class="action-item star">
+					<i class="icon"></i>
+					<span class="num">3</span>
+				</li>
+				<li class="action-item share">
+					<i class="icon"></i>
+					<span class="txt-share">分享</span>
+				</li>
+				<li class="action-item comment">
+					<i class="icon"></i>
+					<span class="num">10</span>
+				</li>
+			</ul>
+			<div class="navigate-wrap">
+				<a href="#" class="link">直达链接</a>
+			</div>
+		</footer>
+		<button class="btn-add-list">加入清单</button>
+	</body>
+</html>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="database/all.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	$(function () {
+		$(".header-back").on("click", function () {
+			history.go(-1);
+		});
+		
+		// 获取文章id参数
+		var url = location.search;
+		// 文章id
+		var id;
+		
+		if(url.indexOf("?") != -1) {
+			var idx = url.indexOf("id");
+			id = url.substring(idx + 3);
+			// console.log(id);
+			
+			// 根据id查询获得文章
+			var article = getArticleById(id);
+			
+			// 模板
+			var msgHtml = `
+				<div class="message-image-wrapper">
+					<img src="${article['thumbnail']}">
+				</div>
+				<div class="message-content">
+					<h1 class="message-name">${article['title']}</h1>
+					<p class="message-desc">${article['content']}</p>
+				</div>
+			`;
+			
+			// 添加到页面中
+			$(".message-detail").html(msgHtml);
+			
+		} else {
+			alert("加载数据失败");
+		}
+		
+		
+		// 点击加入清单
+		$(".btn-add-list").on("click", function () {
+			if(!localStorage.getItem("list")) {
+				// 如果之前没有储存过
+				var list = [];
+				list.push(id);
+				var listJson = JSON.stringify(list);
+				
+				localStorage.setItem("list", listJson);
+			} else {
+				// 获取已经存了的id数组
+				var storeListJson = localStorage.getItem("list");
+				var storeListArr = JSON.parse(storeListJson);
+				storeListArr.push(id);
+				storeListJson = JSON.stringify(storeListArr);
+				// 更新
+				localStorage.setItem("list", storeListJson);
+			}
+			
+			alert("添加成功");
+		});
+	});
+</script>
